@@ -53,3 +53,54 @@ pod2
 ```
 
     
+## Update a pod by adding a sidecar container with busybox for logs, and add an emptyDir volume.
+```sh
+kubectl get po legacy-app -o yaml > legacy-app.yaml
+kubectl delete po legacy-app
+
+vim legacy-app.yaml
+```
+
+### Deployment Definition
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+  labels:
+    app: myapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+        - name: myapp
+          image: alpine:latest
+          command: ['sh', '-c', 'while true; do echo "logging" >> /var/log/logs.txt; sleep 1; done']
+          volumeMounts:
+            - name: data
+              mountPath: /var/log
+        - name: logshipper
+          image: alpine:latest
+          command: ['sh', '-c', 'tail -F /var/log/logs.txt']
+          volumeMounts:
+            - name: data
+              mountPath: /var/log
+      volumes:
+        - name: data
+          emptyDir: {}
+```
+
+```sh
+kubectl apply -f legacy-app.yaml
+
+# Verify the pod and containers are running and the volume exists
+kubectl get po 
+kubectl exec -it myapp-12345 -c myapp -- sh -c "ls /var/log && cat /var/log/logs.txt"
+```

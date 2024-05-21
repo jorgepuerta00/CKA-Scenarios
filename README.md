@@ -19,7 +19,7 @@ Recommended
 
 Not sure where to start? You may consider reviewing our suggested CKA learning path.
 
-EXAM SIMULATOR! Learners will now have access to an exam simulator, provided by [Killer.sh/cka](https://killer.sh/cka), to experience the exam environment. You will have two exam simulation attempts (36 hours of access for each attempt from the start of activation). Simulation includes 20-25 questions (which are exactly the same for every attempt and every user (unlike those found on the actual exams) and graded simulation results.
+**EXAM SIMULATOR!** Learners will now have access to an exam simulator, provided by [Killer.sh/cka](https://killer.sh/cka), to experience the exam environment. You will have two exam simulation attempts (36 hours of access for each attempt from the start of activation). Simulation includes 20-25 questions (which are exactly the same for every attempt and every user (unlike those found on the actual exams) and graded simulation results.
 
 During the exam, you will have access to six different clusters (below) in the following configurations:
 

@@ -55,3 +55,24 @@ kubectl get po
 ```
 
     
+## Create a clusterrole, service account, and then a rolebinding for app-team1. The clusterrole should only allow creating deployments, statefulsets, and daemonsets.
+```sh
+kubectl create sa sa-name -n app-team1
+kubectl create clusterrole cr-name -n app-team1 --verb create --resources deploy,sts,ds
+kubectl create clusterrolebinding crb-name -n app-team1 --clusterrole cr-name --serviceaccount app-team1:sa-name
+```
+
+### Verify
+```sh
+kubectl auth can-i list pods --as=system:serviceaccount:app-team1:sa-name -n app-team1
+No
+
+kubectl auth can-i create pods --as=system:serviceaccount:app-team1:sa-name -n app-team1
+No
+
+kubectl auth can-i create ds --as=system:serviceaccount:app-team1:sa-name -n app-team1
+Yes
+
+kubectl auth can-i create deploy --as=system:serviceaccount:app-team1:sa-name -n app-team1
+Yes
+```
