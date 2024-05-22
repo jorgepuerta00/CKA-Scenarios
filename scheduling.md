@@ -15,6 +15,8 @@ spec:
     image: image2
 ```
 
+[Pods | Kubernetes](https://kubernetes.io/docs/concepts/workloads/pods/)  
+
 ## Count the nodes without the NoSchedule taint in a 3-node cluster.
 ```sh
 kubectl get nodes -ojson | jq '.items[].spec.taints'
@@ -31,6 +33,8 @@ Output:
 echo '2' > result-file.txt
 ```
 
+[Taints and Tolerations | Kubernetes](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)  
+
 ## Scale a deployment named deployment from 2 replicas to 6.
 ```sh
 kubectl get deploy 
@@ -39,6 +43,8 @@ kubectl scale deploy/deployment --replicas 6
 # verify
 kubectl get deploy 
 ```
+
+[kubectl scale | Kubernetes](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_scale/)  
 
 ## List of pods sorted by CPU usage and filter by label
 ```sh
@@ -52,6 +58,7 @@ pod1
 pod2
 ```
 
+[kubectl top | Kubernetes](https://kubernetes.io/docs/reference/kubectl/generated/kubectl_top/)  
     
 ## Update a pod by adding a sidecar container with busybox for logs, and add an emptyDir volume.
 ```sh
@@ -104,3 +111,5 @@ kubectl apply -f legacy-app.yaml
 kubectl get po 
 kubectl exec -it myapp-12345 -c myapp -- sh -c "ls /var/log && cat /var/log/logs.txt"
 ```
+
+[Sidecar Containers | Kubernetes](https://kubernetes.io/docs/concepts/workloads/pods/sidecar-containers/)  

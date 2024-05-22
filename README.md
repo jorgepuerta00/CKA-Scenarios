@@ -21,6 +21,8 @@ Not sure where to start? You may consider reviewing our suggested CKA learning p
 
 **EXAM SIMULATOR!** Learners will now have access to an exam simulator, provided by [Killer.sh/cka](https://killer.sh/cka), to experience the exam environment. You will have two exam simulation attempts (36 hours of access for each attempt from the start of activation). Simulation includes 20-25 questions (which are exactly the same for every attempt and every user (unlike those found on the actual exams) and graded simulation results.
 
+## Important when solving each question 
+
 During the exam, you will have access to six different clusters (below) in the following configurations:
 
 | Cluster | Members                | CNI      | Description                        |
@@ -34,9 +36,20 @@ During the exam, you will have access to six different clusters (below) in the f
 
 [source](https://docs.linuxfoundation.org/tc-docs/certification/tips-cka-and-ckad#cka-and-ckad-environment)
 
-Also during the exam, you may have one and ONLY one of the following tabs open at all times:  
+**ALWAYS!** update the context
+
+They provide you the command, use it in each question, it's a headache if you forget it!
+
+```bash
+kubectl config use-context k8s-c1-H
+```
+## Tip 
+
+During the exam, you may have one and ONLY one of the following tabs open at all times:  
 [kubernetes.io/docs](https://kubernetes.io/docs/home/)  
 [kubernetes.io/blog](https://kubernetes.io/blog/)
+
+You can find commands, all YAML recipes, and even discussions in the blog. This way, you don't need to memorize everything; just learn how to use them
 
 Not sure if you have the right equipment to take the exam at home? [Run a system check](https://www.examslocal.com/ScheduleExam/Home/CompatibilityCheck)
 

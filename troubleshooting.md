@@ -26,4 +26,6 @@ kubectl drain node01 --ignore-daemonsets --delete-emptydir-data
 kubectl delete pod -n kube-system kube-proxy
 ```
 
+[Taints and Tolerations | Kubernetes](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/)  
+[Safely Drain a Node | Kubernetes](https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/)  
     

@@ -56,7 +56,11 @@ spec:
 ### Verify
 ```sh
 kubectl get pv,pvc
+
+kubectl exec -it pod-name -- ls /usr/share/nginx/html
 ```
+
+[Configure a Pod to Use a PersistentVolume for Storage | Kubernetes](https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/)  
 
 ## Create a standalone PersistentVolume (PV).
 ```yaml
@@ -76,4 +80,4 @@ spec:
     path: "/mnt/data"
 ```
 
-    
+[Persistent Volumes | Kubernetes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)  

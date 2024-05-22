@@ -23,12 +23,15 @@ spec:
               number: 5396
 ```
 
-### Verify
 ```sh
+### Verify
+
 kubectl get ingress
 curl [Internal-IP]:port/hello
 hello
 ```
+
+[Ingress | Kubernetes](https://kubernetes.io/docs/concepts/services-networking/ingress/)  
 
 ## Modify a Pod and add port 80, also expose it with a ClusterIP service TCP in the port 80, additionally expose it using NodePort.
 ### Pod Definition
@@ -94,4 +97,16 @@ spec:
       port: 9200
 ```
 
-    
+```sh
+### Verify
+kubectl get po -owide
+
+### should be success
+k exec -it -n internal podName -- ping -c1 targetIp:port
+
+### should fail
+k exec -it -n other podName -- ping -c1 targetIp:port
+```
+
+[Network Policies | Kubernetes](https://kubernetes.io/docs/concepts/services-networking/network-policies/)  
+[Network Policies Recipes | Kubernetes](https://github.com/ahmetb/kubernetes-network-policy-recipes)  
