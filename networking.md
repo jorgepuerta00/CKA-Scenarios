@@ -67,6 +67,9 @@ kubectl apply -f myapp-service.yaml
 kubectl expose service myapp-service --type=NodePort --port 80 --name=myapp-nodeport-service
 ```
 
+[Service | Kubernetes](https://kubernetes.io/docs/concepts/services-networking/service/)  
+[Using a Service to Expose Your App | Kubernetes](https://kubernetes.io/docs/tutorials/kubernetes-basics/expose/expose-intro/)  
+
 ## Create a NetworkPolicy in the echo namespace to allow traffic to the internal namespace on port 9200/tcp, ensuring that the echo namespace only accepts traffic on port 9200/tcp from the internal namespace.
 ```yaml
 apiVersion: networking.k8s.io/v1
